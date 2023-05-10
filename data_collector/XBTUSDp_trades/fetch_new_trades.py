@@ -23,7 +23,7 @@ def fetch_new_trades(endpoint: str, symbol: str, last_update_time: str, end_time
                 new_df.to_csv(csv_path, mode='a', header=False, index=False)
             else:
                 new_df.to_csv(csv_path, mode='a', index=False)
-            print(f"Fetched and stored {len(df)} trades ...")
+            print(f"Fetched and stored {len(trades)} trades ...")
             trades = []
         time.sleep(2)  # Sleep for 2 seconds before making the next request
     return trades
