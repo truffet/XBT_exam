@@ -15,7 +15,7 @@ def fetch_xbtusdp_trades_data() -> pd.DataFrame:
     # If the CSV file does not exist, fetch the entire history of data
     if not csv_exists:
         print("Fetching entire history of XBTUSD perpetual contract trades data...")
-        trades = fetch_all_trades(endpoint, symbol, start_time, end_time, count)
+        trades = fetch_all_trades(endpoint, symbol, start_time, end_time, count, csv_path)
         df = pd.DataFrame(trades)
         df.to_csv(csv_path, index=False)
         print("Data saved to CSV file:", csv_path)
